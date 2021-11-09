@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "timescale_ab"
+version = "0.1.0"
+description = "Like ab kind of but for running queries against a timescaledb"
+authors = ["None"]
+license = "None"
+include = ["timescale_ab/data/cpu_usage.sql", "timescale_ab/data/cpu_usage.csv"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+psycopg = {extras = ["binary"], version = "^3.0.1"}
+
+[tool.poetry.dev-dependencies]
+black = "^21.10b0"
+shiv = "^0.5.2"
+
+[tool.poetry.scripts]
+tsab = 'timescale_ab.cli:main'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
