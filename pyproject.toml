@@ -8,7 +8,13 @@ include = ["timescale_ab/data/cpu_usage.sql", "timescale_ab/data/cpu_usage.csv"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-psycopg = {extras = ["binary"], version = "^3.0.1"}
+psycopg = "^3.0.1"
+psycopg-c = { version = "^3.0.1", optional = true }
+psycopg-binary = { version = "^3.0.1", optional = true }
+
+[tool.poetry.extras]
+c = ["psycopg-c"]
+binary = ["psycopg-binary"]
 
 [tool.poetry.dev-dependencies]
 black = "^21.10b0"

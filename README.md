@@ -30,13 +30,23 @@ You must install all of 1-4 or all of 1-3+5.
 
 ### Quickstart
 
+Run it all in one container
+```
+$ make docker-tsab
+```
+
+Cleanup running contianer
+```
+$ make docker-shutdown
+```
+
+Install locally (into venv) and run tsab test against docker container timescale-db
 ```
 $ poetry install
 $ poetry run tsab container query_params.csv docker
 ```
 
-or adjust with your connection options below
-
+Install locally (into venv) and run against arbitrary timescale-db
 ```
 $ poetry install
 $ psql -U postgres < timescale_ab/data/cpu_usage.sql
